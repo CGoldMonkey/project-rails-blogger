@@ -8,5 +8,7 @@
 
 <br>
 <%= link_to "Tag List", tags_path %>
-<%= link_to "Delete Tag", tag_path(@tag), method: :delete,
-data: {confirm: "Really delete the tag?"} %>
+<% if logged_in? %> <!-- Hide link from unauthenticated users -->
+	<%= link_to "Delete Tag", tag_path(@tag), method: :delete,
+	data: {confirm: "Really delete the tag?"} %>
+<% end %>

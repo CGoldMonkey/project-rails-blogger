@@ -7,5 +7,6 @@
     </li>
   <% end %>
 </ul>
-
-<%= link_to "Create a New Article", new_article_path, class: 'new_article' %>
+<% if logged_in? %> <!-- Hide link from unauthenticated users -->
+  <%= link_to "Create a New Article", new_article_path, class: 'new_article' %>
+<% end %>
